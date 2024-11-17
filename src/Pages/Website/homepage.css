@@ -1,0 +1,13 @@
+:root {
+    --blue: #00499c;
+}
+
+.blue {
+    color: var(--blue) !important;
+}
+
+.custom-card {
+    width: 400px !important;
+    height: 700px !important;
+    border: unset;
+}

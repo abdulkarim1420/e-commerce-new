@@ -1,0 +1,18 @@
+/* for test only */
+.btn {
+    border-radius: 15px !important;
+    -webkit-border-radius: 15px !important;
+    -moz-border-radius: 15px !important;
+    -ms-border-radius: 15px !important;
+    -o-border-radius: 15px !important;
+}
+
+.btn-primary {
+    background-color: #038edc !important;
+    border: #038edc !important;
+}
+
+.cyan {
+    color: #038edc;
+    font-weight: bold;
+}
