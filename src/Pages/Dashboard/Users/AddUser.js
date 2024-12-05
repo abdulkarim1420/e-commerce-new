@@ -60,8 +60,8 @@ export default function AddUser() {
                         <option disabled value="">Select Role</option>
                         <option value={1995}>Admin</option>
                         <option value={2001}>User</option>
-                        <option value={1996}>Writer</option>
                         <option value={1999}>Product Manager</option>
+                        {/* <option value={1996}>Writer</option> */}
                     </Form.Select>
                 </Form.Group>
                 <button disabled={ name.length > 1 && email.length > 1 && password.length > 6 && role !== "" ? false : true} className='btn btn-primary'>Save</button>

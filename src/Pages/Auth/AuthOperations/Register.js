@@ -53,7 +53,7 @@ export default function Register() {
 
             const token = res.data.token;
             const role = res.data.user.role;
-            const go = role === '1995' ? 'users' : role === '1996' ? 'writer' : '404';
+            const go = role === '1995' ? 'users' : role === '1999' ? 'categories' : '404';
             cookie.set('e-commerce', token);
             window.location.pathname = `/dashboard/${go}`;
             

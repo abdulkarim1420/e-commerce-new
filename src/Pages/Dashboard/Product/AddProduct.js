@@ -23,6 +23,7 @@ export default function AddProduct() {
         price: "0",
         discount: "0",
         About: "about",
+        stock: 0,
     }
     const [images, setImages] = useState([]);
     const [categories, setCategories] = useState([]);
@@ -50,7 +51,7 @@ export default function AddProduct() {
     // Get All Categories
     useEffect(() => {
         Axios.get(`/${CATEGORIES}`)
-        .then((data) => setCategories(data.data.data))
+        .then((data) => setCategories(data.data))
         .catch((err) => console.log(err));
     }, []);
 
@@ -194,6 +195,11 @@ export default function AddProduct() {
                 <Form.Group className="mb-3" controlId="About">
                     <Form.Label>About</Form.Label>
                     <Form.Control type="text" name="About" placeholder="About" disabled={!sent} value={form.About} onChange={handleChange} required />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="stock">
+                    <Form.Label>Stock</Form.Label>
+                    <Form.Control type="number" name="stock" placeholder="Stock" disabled={!sent} value={form.stock} onChange={handleChange} required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="images">

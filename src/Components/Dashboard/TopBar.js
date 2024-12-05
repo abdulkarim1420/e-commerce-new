@@ -1,13 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import "./bars.css"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { useContext, useEffect, useState } from "react";
 import { Menu } from "../../Context/MenuContext";
 import { LOGOUT, USER } from "../../Api/Api";
 import { Axios } from "../../Api/axios";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import Cookie from 'cookie-universal';
+import "./bars.css"
 
 export default function TopBar() {
 
@@ -18,8 +18,8 @@ export default function TopBar() {
 
     // Get Current User
     useEffect(() => {
-        Axios.get(`/${USER}`).
-        then((data) => setName(data.data.name))
+        Axios.get(`/${USER}`)
+        .then((data) => setName(data.data.name))
         .catch(() => Navigate("/login", { replace: true }));
     }, []);
 
@@ -44,9 +44,9 @@ export default function TopBar() {
             <div className="d-flex align-items-center justify-content-center flex-row gap-2">
 
             <p className="m-0">
-              Signed in as: <a href="" className="blue font-weight-bold">{name}</a>
+              Signed in as: <span className="blue font-weight-bold">{name}</span>
             </p>
-
+            <Link to='/' className="btn btn-primary ms-3">Home Page</Link>
             <Button variant="dark" onClick={handleLogout}>Logout</Button>
             </div>
         </div>

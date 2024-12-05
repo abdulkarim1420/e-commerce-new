@@ -37,6 +37,14 @@ export default function Categories() {
             key: 'image',
             name: 'Image',
           },
+          {
+            key: 'created_at',
+            name: 'Created',
+          },
+          {
+            key: 'updated_at',
+            name: 'Updated',
+          },
         ]
 
         // Handle Delete
@@ -55,8 +63,8 @@ export default function Categories() {
                     <h1>Categories Page</h1>
                     <Link className="btn btn-primary" to="/dashboard/category/add"><FontAwesomeIcon icon={faPlus} /> Add Category</Link>
                 </div>
-                
-                <TableShow header={header} data={categories} delete={handleDelete} page={page} limit={limit} setLimit={setLimit} setPage={setPage} total={total} loading={loading} />
+
+                <TableShow header={header} data={categories} delete={handleDelete} page={page} limit={limit} setLimit={setLimit} setPage={setPage} total={total} loading={loading} searchLink={CATEGORY} search="title" />
       
             </div>
         )

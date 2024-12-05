@@ -15,6 +15,7 @@ export default function UpdateProduct() {
         price: "",
         discount: "",
         About: "",
+        stock: "",
     });
     const [images, setImages] = useState([]);
     const [imagesFormServer, setImagesFromServer] = useState([]);
@@ -43,7 +44,7 @@ export default function UpdateProduct() {
     // Get All Categories
     useEffect(() => {
         Axios.get(`/${CATEGORIES}`)
-        .then((data) => setCategories(data.data.data))
+        .then((data) => setCategories(data.data))
         .catch((err) => console.log(err));
     }, []);
 
@@ -195,6 +196,11 @@ export default function UpdateProduct() {
                 <Form.Group className="mb-3" controlId="About">
                     <Form.Label>About</Form.Label>
                     <Form.Control type="text" name="About" placeholder="About" value={form.About} onChange={handleChange} required />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="stock">
+                    <Form.Label>Stock</Form.Label>
+                    <Form.Control type="number" name="stock" placeholder="Stock" value={form.stock} onChange={handleChange} required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="images">

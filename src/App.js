@@ -18,13 +18,21 @@ import AddProduct from './Pages/Dashboard/Product/AddProduct';
 import UpdateProduct from './Pages/Dashboard/Product/Product';
 
 import './App.css';
+import WebsiteCategories from './Pages/Website/Categories';
+import Website from './Pages/Website/Website';
+import SingleProduct from './Pages/Website/SingleProduct/SingleProduct';
 
 function App() {
   return (
     <div>
       <Routes>
         {/* Public Routes */}
-        <Route path='/' element={<HomePage />}></Route>
+        <Route element={<Website />}>
+          <Route path='/' element={<HomePage />}></Route>
+          <Route path='/categories' element={<WebsiteCategories />}></Route>
+          <Route path='/product/:id' element={<SingleProduct />}></Route>
+        </Route>
+
         <Route element={<RequireBack />}>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/register' element={<Register />}></Route>
@@ -32,7 +40,7 @@ function App() {
         <Route path='auth/google/callback' element={<GoogleCallBack />}></Route>
         <Route path='/*' element={<Err404 />} />
         {/* Protected Routes */}
-        <Route element={<RequireAuth allowedRole={['1996', '1995', '1999']} />}>
+        <Route element={<RequireAuth allowedRole={['1995', '1999']} />}>
           <Route path='/dashboard' element={<Dashboard />}>
             <Route element={<RequireAuth allowedRole={['1995']} />}>
                 <Route path='users' element={<Users />} />

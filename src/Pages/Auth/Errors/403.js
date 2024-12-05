@@ -9,7 +9,7 @@ export default function Err403({ role }) {
             </div>
             <div className="subtitle">
                 Oops, You don't have permission to access this page.
-                <Link to={role === '1996' ? '/dashboard/writer' : '/'} className="d-block text-center" >{role === '1996' ? 'Go to writer page.' : 'Go to Home Page.'}</Link>
+                <Link to={role === '1999' ? '/dashboard/categories' : '/'} className="d-block text-center" >{role === '1999' ? 'Go to categories page.' : 'Go to Home Page.'}</Link>
             </div>
         </div>
     )

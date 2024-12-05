@@ -48,6 +48,14 @@ export default function Users() {
             key: 'role',
             name: 'Role',
         },
+        {
+            key: 'created_at',
+            name: 'Created',
+        },
+        {
+            key: 'updated_at',
+            name: 'Last Login',
+        },
     ];
 
         // Handle Delete
@@ -67,7 +75,7 @@ export default function Users() {
                 <Link className="btn btn-primary" to="/dashboard/user/add"><FontAwesomeIcon icon={faPlus} /> Add User</Link>
             </div>
 
-            <TableShow header={header} data={users} currentUser={currentUser} delete={handleDelete} page={page} limit={limit} setLimit={setLimit} setPage={setPage} total={total} loading={loading} />
+            <TableShow header={header} data={users} currentUser={currentUser} delete={handleDelete} page={page} limit={limit} setLimit={setLimit} setPage={setPage} total={total} loading={loading} searchLink={USER} search="name" />
         </div>
     )
   }

@@ -15,14 +15,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MenuContext from './Context/MenuContext';
 import WindowContext from './Context/WindowContext';
 
+import 'react-loading-skeleton/dist/skeleton.css'
+import CartChangerContext from './Context/CartChangerContext';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <WindowContext>
       <MenuContext>
-        <Router>
-          <App />
-        </Router>
+        <CartChangerContext>
+          <Router>
+            <App />
+          </Router>
+        </CartChangerContext>
       </MenuContext>
     </WindowContext>
   </React.StrictMode>

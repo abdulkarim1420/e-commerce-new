@@ -17,6 +17,14 @@ export const CATEGORY = "category";
 // Products
 export const PRODUCTS = "products";
 export const PRODUCT = "product";
+export const LATESTSALE = "latest-sale";
+export const LATEST = "latest";
+export const TOPRATED = "top-rated";
+
+// Cart
+export const CART = "cart";
+
+
 
 // Google
 export const GOOGLE_CALL_BACK = "auth/google/callback";

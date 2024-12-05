@@ -50,8 +50,20 @@ export default function Products() {
             name: 'Discount',
           },
           {
+            key: 'stock',
+            name: 'Stock',
+          },
+          {
             key: 'rating',
             name: 'Rating',
+          },
+          {
+            key: 'created_at',
+            name: 'Created',
+          },
+          {
+            key: 'updated_at',
+            name: 'Updated',
           },
         ]
 
@@ -72,7 +84,7 @@ export default function Products() {
                     <Link className="btn btn-primary" to="/dashboard/product/add"><FontAwesomeIcon icon={faPlus} /> Add Product</Link>
                 </div>
                 
-                <TableShow header={header} data={products} delete={handleDelete} page={page} limit={limit} setLimit={setLimit} setPage={setPage} total={total} loading={loading} />
+                <TableShow header={header} data={products} delete={handleDelete} page={page} limit={limit} setLimit={setLimit} setPage={setPage} total={total} loading={loading} searchLink={PRODUCT} search="title" />
 
             </div>
         )

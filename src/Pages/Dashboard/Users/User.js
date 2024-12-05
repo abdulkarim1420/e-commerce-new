@@ -64,7 +64,8 @@ export default function User() {
                         <option disabled value="">Select Role</option>
                         <option value={1995}>Admin</option>
                         <option value={2001}>User</option>
-                        <option value={1996}>Writer</option>
+                        <option value={1999}>Product Manager</option>
+                        {/* <option value={1996}>Writer</option> */}
                     </Form.Select>
                 </Form.Group>
                 <button disabled={disable} className='btn btn-primary'>Save</button>
